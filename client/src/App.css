@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&display=swap');
+
+/* ==================================================
+   SWEET CAKES BAKERY - COMPLETE STYLESHEET
+   ================================================== */
+
+/* --------------------------------------------------
+   1. ROOT VARIABLES
+   -------------------------------------------------- */
+:root {
+  /* Brand */
+  --pink: #d63384;
+  --pink-light: #ffe6f0;
+  --pink-dark: #b02a5b;
+  --pink-darker: #d633c0;
+  --purple: #a233d6;
+  --brown: #5a1d1d;
+
+  /* Text & Backgrounds */
+  --text: #93138d;
+  --text-light: #555;
+  --text-lighter: #666;
+  --white: #fff;
+  --bg: #fefefe;
+  --bg-light: #fff5f8;
+
+  /* Borders & Shadows */
+  --border: #e2c8d8;
+  --border-light: #e4e4e4;
+  --shadow: 0 5px 15px rgba(0,0,0,0.1);
+  --shadow-hover: 0 8px 20px rgba(0,0,0,0.15);
+
+  /* Vite */
+  --accent: #d63384;
+  --accent-bg: #ffe6f0;
+  --accent-border: #d63384;
+  --text-h: #dc22c3;
+  --social-bg: #fff5f8;
+
+  /* Fonts */
+  --font-cursive: 'Great Vibes', cursive;
+  --font-main: 'Poppins', sans-serif;
+}
+
+/* --------------------------------------------------
+   2. RESET & BASE
+   -------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* --------------------------------------------------
+   3. HEADER & NAVIGATION
+   -------------------------------------------------- */
+header {
+  background: var(--white);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.1);
+  padding: 2px 0;
+  position: relative;
+  top: 0;
+  
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+header h1 a {
+  font-family: var(--font-cursive);
+  color: var(--pink);
+  font-size: 48px;
+  text-decoration: none;
+  letter-spacing: 2px;
+  position: top;
+}
+
+nav {
+  text-align: center;
+}
+
+nav a {
+  font-family: var(--font-cursive);
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 26px;
+  margin: 0 20px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: var(--pink-light);
+  color: var(--purple);
+  transform: scale(1.05);
+}
+
+nav a.active {
+  background: var(--pink-darker);
+  color: var(--white);
+}
+
+/* --------------------------------------------------
+   4. HAMBURGER MENU
+   -------------------------------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: var(--pink);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* --------------------------------------------------
+   5. HERO SECTIONS
+   -------------------------------------------------- */
+.hero-bakery {
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('/images/hero-cake.jpeg') center/cover no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 120px 20px;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-bakery h2 {
+  font-family: var(--font-cursive);
+  font-size: 56px;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 30px;
+  border-radius: 25px;
+  background: var(--white);
+  color: var(--pink);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: var(--pink-light);
+  transform: translateY(-2px);
+}
+
+/* --------------------------------------------------
+   6. FEATURED CAKES
+   -------------------------------------------------- */
+.featured {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.featured h2 {
+  font-family: var(--font-cursive);
+  color: var(--pink);
+  font-size: 48px;
+  margin-bottom: 40px;
+}
+
+.cake-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cake-card {
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.cake-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+}
+
+.cake-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.cake-card h3 {
+  font-family: var(--font-cursive);
+  font-size: 28px;
+  padding: 15px 15px 5px;
+}
+
+.cake-card .price {
+  color: var(--pink);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 15px 15px;
+}
+
+.btn-small {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background: var(--pink);
+  color: var(--white);
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-small:hover {
+  background: var(--pink-dark);
+}
+
+/* --------------------------------------------------
+   7. COUNTER & VITE TEMPLATE
+   -------------------------------------------------- */
+.counter {
+  font-size: 16px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+  margin-bottom: 24px;
+}
+
+.counter:hover {
+  border-color: var(--accent-border);
+}
+
+/* --------------------------------------------------
+   8. FOOTER
+   -------------------------------------------------- */
+footer {
+  background: var(--brown);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 30px;
+}
+
+.datetime {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+  font-style: italic;
+}
+
+/* --------------------------------------------------
+   9. RESPONSIVE
+   -------------------------------------------------- */
+@media (max-width: 768px) {
+  header h1 a {
+    font-size: 36px;
+  }
+
+  .hero-bakery h2 {
+    font-size: 32px;
+  }
+
+  .featured h2 {
+    font-size: 36px;
+  }
+
+  .cake-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .cake-card img {
+    height: 180px;
+  }
+}
+
+/* ===== FIX NAVBAR - DROPDOWN VERTICAL ===== */
+header {
+  position: relative;
+  top: 0;
+  background: white;
+  z-index: 100;
+}
+
+.header-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  background: #d81b60;
+  border-radius: 3px;
+  transition: 0.3s;
+}
+.hamburger.open span:nth-child(1){transform:translateY(8.5px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-8.5px) rotate(-45deg)}
+
+nav {
+  width: 100%;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  display: flex;
+  flex-direction: column; /* DOWN NOT LINE */
+  transition: all 0.3s ease;
+  background: white;
+}
+
+nav.open {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid #fce4ec;
+}
+
+nav a {
+  padding: 12px 0;
+  font-size: 16px;
+  border-bottom: 1px solid #fce4ec;
+  width: 100%;
+}
+
+/* Desktop - show in line */
+@media (min-width: 769px) {
+  .hamburger { display: none; }
+  nav {
+    width: auto;
+    max-height: none;
+    opacity: 1;
+    flex-direction: row;
+    gap: 15px;
+  }
+  nav a { border: none; width: auto; padding: 6px 14px; }
+  nav.open { margin:0; padding:0; border:none; }
+}
+
+/* ===== NICE BOXES - ORDER PAGE ===== */
+.order-section {
+  padding: 30px 15px;
+}
+.order-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.order-cake-info, .order-form {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.1);
+  border: 1px solid #fce4ec;
+}
+
+.order-cake-info img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.order-form label {
+  display: block;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 14px;
+}
+
+.order-form input, 
+.order-form select, 
+.order-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #f8bbd0;
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  background: #fffafb;
+}
+
+.order-form input:focus, 
+.order-form select:focus, 
+.order-form textarea:focus {
+  outline: none;
+  border-color: #d81b60;
+  background: white;
+}
+
+.order-form button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+  background: #d81b60;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* ===== NICE BOXES - CONTACT PAGE ===== */
+.contact-section {
+  padding: 30px 15px;
+}
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-info .info-item {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.08);
+  border-left: 4px solid #d81b60;
+}
+
+.contact-info .info-item h3 {
+  margin: 0 0 8px 0;
+  color: #d81b60;
+  font-size: 16px;
+}
+
+.contact-map {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  height: 450px;
+}
+
+.contact-map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .order-grid, .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== ABOUT US - PRETTY ===== */
+.about-section {
+  background: #fff0f3; /* light pink background */
+  padding: 40px 15px;
+}
+
+.about-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-header h2 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 52px;
+  color: #d81b60;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.about-header p.subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+  color: #ec407a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.about-text {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(216, 27, 96, 0.1);
+  border: 1px solid #fce4ec;
+  line-height: 1.8;
+  color: #444;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-text h3 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 36px;
+  color: #d81b60;
+  margin-bottom: 15px;
+}
+
+.about-image {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 5px solid white;
+}
+
+.about-image img {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Stats boxes */
+.about-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 35px;
+}
+
+.stat-box {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(216, 27, 96, 0.08);
+  border-bottom: 4px solid #d81b60;
+  transition: transform 0.2s;
+}
+.stat-box:hover { transform: translateY(-5px); }
+
+.stat-box h4 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 42px;
+  color: #d81b60;
+  margin: 0;
+}
+
+.stat-box p {
+  font-family: 'Poppins', sans-serif;
+  color: #666;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-content { grid-template-columns: 1fr; }
+  .about-stats { grid-template-columns: 1fr; }
+  .about-header h2 { font-size: 40px; }
+}
