@@ -10,7 +10,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    fetch('/cakes.json')
+    fetch('https://steamy-cakes.onrender.com/api/cakes')
      .then(res => res.json())
      .then(data => {
         const list = data.cakes || data
