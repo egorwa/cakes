@@ -70,7 +70,7 @@ function App() {
               <div className="cake-grid">
                 {featured.map(cake => (
                   <div key={cake.id} className="cake-card">
-                    <img src={`/${cake.image}`} alt={cake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
+                    <img src={cake.image_url || cake.image} alt={cake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
                     <h3>{cake.name}</h3>
                     <p className="price">R{cake.price}</p>
                     <button className="btn-small" onClick={()=>goOrder(cake)}>Order Now</button>
@@ -116,7 +116,7 @@ function App() {
               <div className="cake-grid">
                 {filteredCakes.map(cake => (
                   <div key={cake.id} className="cake-card">
-                    <img src={`/${cake.image}`} alt={cake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
+                   <img src={cake.image_url || cake.image} alt={cake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
                     <h3>{cake.name}</h3>
                     <p className="price">R{cake.price}</p>
                     <button className="btn-small" onClick={()=>goOrder(cake)}>Order Now</button>
@@ -140,7 +140,7 @@ function App() {
                 <div className="order-cake-info">
                   {selectedCake? (
                     <>
-                      <img src={`/${selectedCake.image}`} alt={selectedCake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
+                   <img src={selectedCake.image_url || selectedCake.image} alt={selectedCake.name} onError={(e)=>e.target.src='https://via.placeholder.com/300?text=No+Image'} />
                       <h3 style={{fontFamily:'var(--font-cursive)', color:'var(--pink)', marginTop:'15px'}}>{selectedCake.name}</h3>
                       <p className="price">R{selectedCake.price}</p>
                       <p>{selectedCake.description || 'Freshly baked with love'}</p>
