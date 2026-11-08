@@ -46,6 +46,7 @@ With Steamy Cakes:
 .Prices and cake details are always up to date
 
 # Software Demo
+https://youtu.be/QTdt9Om1Lhg
 
 
 
@@ -85,10 +86,9 @@ Then open:
 
 #Useful Websites
 
-. TypeScript Handbook - Classes and Types
-. Express.js - Routing and API Guide
-. React + Vite Tutorial
-. Full Stack Project Tutorial
+https://youtu.be/d56mG7DezGs?si=tNfKFMyQfvNBPxmu
+https://youtu.be/2gkcZxcNUYY?si=zjmaQq90kuoZO-5q
+https://youtu.be/bYgphDEWwvs?si=6IEnx0gIjOGy7vLW
 . PostgreSQL + Express Tutorial
 . ESLint - Flat Config Docs
 
