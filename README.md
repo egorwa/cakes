@@ -57,7 +57,7 @@ This project was developed using:
 .Operating System: Windows 11
 .Code Editor: Visual Studio Code
 .Frontend: React + Vite (runs on http://localhost:5174)
-.Backend: TypeScript + Express.js (runs on http://localhost:5000)
+.Backend: TypeScript + Express.js (runs on http:localhost:5000)
 .Language: TypeScript / JavaScript
 .Frontend Package Manager: npm (uses package-lock.json)
 .Backend Package Manager: pnpm (uses pnpm-lock.yaml)

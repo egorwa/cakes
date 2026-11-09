@@ -1,9 +1,11 @@
+// This file sets up an Express server that connects to a PostgreSQL database and provides an API endpoint to retrieve cake data.
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import { Pool } from "pg";
 
 dotenv.config();
+// Create a new Express application
 
 const app = express();
 app.use(cors());
@@ -20,6 +22,7 @@ const pool = new Pool({
   },
 });
 
+// Test the database connection
 app.get("/", (req, res) => {
   res.send("Cake server is running");
 });

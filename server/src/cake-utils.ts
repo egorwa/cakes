@@ -1,3 +1,4 @@
+// This file contains utility functions and classes related to cakes.
 export class Cake {
   constructor(
     public id: number,
@@ -6,6 +7,7 @@ export class Cake {
     public category: string
   ) {}
 
+  // FORMATTING: formats the price to two decimal places
   getFormattedPrice(): string {
     return `R${this.price.toFixed(2)}`;
   }

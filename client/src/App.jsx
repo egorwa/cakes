@@ -1,6 +1,8 @@
+// This file is the main React component for the Steamy Cake Creamery web application. It manages state, fetches cake data from the server, and renders different pages based on user interaction.
 import { useEffect, useState } from 'react'
 import './App.css'
 
+// The main App component
 function App() {
   const [cakes, setCakes] = useState([])
   const [page, setPage] = useState('home')
@@ -9,6 +11,7 @@ function App() {
   const [selectedCake, setSelectedCake] = useState(null)
   const [menuOpen, setMenuOpen] = useState(false)
 
+  // Fetch cake data from the server when the component mounts
   useEffect(() => {
     fetch('https://steamy-cakes.onrender.com/api/cakes')
      .then(res => res.json())
@@ -19,6 +22,7 @@ function App() {
       })
   }, [])
 
+  // Filter cakes based on search and category
   const filteredCakes = cakes.filter(c => {
     const matchSearch = c.name.toLowerCase().includes(search.toLowerCase())
     const matchCat = category === 'all' || c.category === category || c.flavour === category
@@ -27,6 +31,7 @@ function App() {
 
   const featured = cakes.slice(0, 6)
 
+  
   const goOrder = (cake) => {
     setSelectedCake(cake)
     setPage('order')
@@ -41,7 +46,7 @@ function App() {
               <button className={`hamburger ${menuOpen ? 'open' : ''}`} onClick={()=>setMenuOpen(!menuOpen)}>
       <span></span><span></span><span></span>
     </button>
-
+   
     <nav className={menuOpen ? 'open' : ''}>
             <a href="#" className={page==='home'?'active':''} onClick={(e)=>{e.preventDefault(); setPage('home')}}>Home</a>
             <a href="#" className={page==='cakes'?'active':''} onClick={(e)=>{e.preventDefault(); setPage('cakes')}}>Cakes</a>
